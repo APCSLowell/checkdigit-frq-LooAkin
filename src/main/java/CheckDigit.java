@@ -10,7 +10,6 @@ public class CheckDigit
      int sum = 0;
      for(int i = 0; i <= getNumberOfDigits(num); i++){
        sum = sum + (getDigit(num, i)*(8-i));
-       product--;
          }
      return sum % 10;
    }
