@@ -20,7 +20,6 @@ public class CheckDigit
      for(int i = 0; i < count; i++){
        sum = sum + ((num % 10)*product);
        product--;
-       num = num/10;
          }
      return sum % 10;
    }
@@ -33,8 +32,8 @@ public class CheckDigit
    */     
    public static boolean isValid(int numWithCheckDigit)    
    {      
-     int checkNum = getCheck(numWithCheckDigit);
-     if(isValid(checkNum))
+     int checkNum = getCheck(numWithCheckDigit/10);
+     if(checkNum == (numWithCheckDigit%10))
        return true;
      else
        return false;
