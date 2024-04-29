@@ -7,7 +7,21 @@ public class CheckDigit
    */  
    public static int getCheck(int num) 
    {  
-     /* to be implemented in part (a) */
+     int fullNum = num;
+     int count = 0;
+     int sum = 0;
+     int product = 7;
+     while(fullNum > 0){
+       if(fullNum % 10 == 0)
+         fullNum++;
+       count++;
+       fullNum = fullNum/10;
+     }
+     for(int i = 0; i < count; i++){
+       sum = sum + ((num % 10)*product);
+       product--;
+         }
+     return sum % 10;
    }
  
   /** Returns true if numWithCheckDigit is valid, or false    
@@ -18,7 +32,11 @@ public class CheckDigit
    */     
    public static boolean isValid(int numWithCheckDigit)    
    {      
-     /* to be implemented in part (b) */    
+     int checkNum = getCheck(numWithCheckDigit);
+     if(checkNum.isValid())
+       return true;
+     else
+       return false;
    }    
    
    /** Returns the number of digits in num. */    
