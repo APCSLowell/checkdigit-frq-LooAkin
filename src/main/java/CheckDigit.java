@@ -20,6 +20,7 @@ public class CheckDigit
      for(int i = 0; i < count; i++){
        sum = sum + ((num % 10)*product);
        product--;
+       num = num/10;
          }
      return sum % 10;
    }
