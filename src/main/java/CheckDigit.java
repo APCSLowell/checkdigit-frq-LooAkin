@@ -33,7 +33,7 @@ public class CheckDigit
    public static boolean isValid(int numWithCheckDigit)    
    {      
      int checkNum = getCheck(numWithCheckDigit);
-     if(checkNum.isValid())
+     if(isValid(checkNum))
        return true;
      else
        return false;
