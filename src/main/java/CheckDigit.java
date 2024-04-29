@@ -7,20 +7,11 @@ public class CheckDigit
    */  
    public static int getCheck(int num) 
    {  
-     int fullNum = num;
-     int count = 0;
      int sum = 0;
      int product = 7;
-     while(fullNum > 0){
-       if(fullNum % 10 == 0)
-         fullNum++;
-       count++;
-       fullNum = fullNum/10;
-     }
-     for(int i = 0; i < count; i++){
-       sum = sum + ((num % 10)*product);
+     for(int i = 0; i <= getNumberOfDigits(num); i++){
+       sum = sum + (getDigit(num, i)*product);
        product--;
-       num = num/10;
          }
      return sum % 10;
    }
